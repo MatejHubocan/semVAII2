@@ -20,7 +20,7 @@ $stmt->fetch();
 $stmt->close();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Profile Page</title>
@@ -30,8 +30,6 @@ $stmt->close();
     <a href="profile.php">Profile</a>
     <a href="logout.php">Logout</a>
     <a href="home.php">Home</a>
-    <a href="login.html">Log in</a>
-    <a href="about.html">About</a>
 </div>
 <div class="content">
     <h2>Profile details</h2>
