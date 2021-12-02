@@ -47,8 +47,8 @@
     let spider = document.getElementById('spider');
 
     function move() {
-        document.getElementById('spider').style.marginLeft= Math.floor(Math.random() * 40)-10+"px";
-        document.getElementById('spider').style.marginTop= Math.floor(Math.random() * 40)-10+"px";
+        spider.style.marginLeft= Math.floor(Math.random() * 40)-10+"px";
+        spider.style.marginTop= Math.floor(Math.random() * 40)-10+"px";
         j++;
         if (j < howManyTimesMove) {
             setTimeout(move, 250);
