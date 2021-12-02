@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScriptFun</title>
+</head>
+<body>
+<div style="top: 0">
+    <button onclick="spin()">spin</button>
+    <button onclick="move()">move</button>
+</div>
+
+<img id = "spider"
+     src="https://lh3.googleusercontent.com/proxy/ZLBOr4jVhd2UsWtEIg3WEBE7N9zRon5H1tBu-4Q8ORBTlgdKnDT9_K1xDMfoFDQQVrZ3XGWYn-Qq7KEFQ5bI3wYS3sF4sU7gv3QEup1moJXgip_vRG5VjRwK"
+     alt="there should be a picture of spider"
+     width = "300"
+     height="300"
+     style="horiz-align: center;vertical-align: center"
+/>
+
+
+<script>
+    let i = 0, howManyTimesSpin = 100;
+    let rotation = 0;
+
+    function spin() {
+        rotation = spinAngle(rotation);
+        i++;
+        if (i < howManyTimesSpin) {
+            setTimeout(spin, 250);
+        }
+    }
+    function spinAngle(rotation){
+        rotation += Math.floor(Math.random() * 40)-20;
+        if (rotation > 360) {
+            rotation = rotation % 360;
+        }
+        if(rotation < 0)
+        {
+            rotation += 360;
+        }
+        document.getElementById('spider').style.transform = `rotate(${rotation}deg)`;
+        return rotation;
+    }
+
+    let j = 0, howManyTimesMove = 100;
+    let spider = document.getElementById('spider');
+
+    function move() {
+        document.getElementById('spider').style.marginLeft= Math.floor(Math.random() * 40)-10+"px";
+        document.getElementById('spider').style.marginTop= Math.floor(Math.random() * 40)-10+"px";
+        j++;
+        if (j < howManyTimesMove) {
+            setTimeout(move, 250);
+        }
+    }
+</script>
+
+</body>
+</html>
